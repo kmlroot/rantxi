@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import createStore from './store/CreateStore'
+import createReduxStore from './store/CreateStore'
 
 class Main extends Component {
   renderApp () {
     const initialState = window.__INITIAL_STATE__
-    const store = createStore(initialState)
+    const store = createReduxStore(initialState)
   }
 
   render () {

@@ -11,7 +11,7 @@ let socketIoMiddleware = createSocketIoMiddleware(socket, 'server/')
 
 const log = createLogger({ diff: true, collapsed: true })
 
-export default (initialState = {}) => {
+function createReduxStore (initialState = {}) {
   const middleware = [thunk, log, socketIoMiddleware]
   const enhancers = []
 
@@ -25,3 +25,5 @@ export default (initialState = {}) => {
   )
   return store
 }
+
+export default createReduxStore
